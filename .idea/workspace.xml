@@ -9,10 +9,38 @@
       <change beforePath="$PROJECT_DIR$/../day_7/hero_rpg.py" afterPath="" />
       <change beforePath="$PROJECT_DIR$/../day_7/oop_exercises.py" afterPath="" />
       <change beforePath="$PROJECT_DIR$/../day_7/rpg-main.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/rpg_game.iml" afterPath="$PROJECT_DIR$/.idea/rpg_game.iml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/day_7/hero_rpg.py" afterPath="$PROJECT_DIR$/day_7/hero_rpg.py" />
+      <change beforePath="$PROJECT_DIR$/day_7/.idea/day_7.iml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/day_7/.idea/dictionaries/davidhull.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/day_7/.idea/libraries/R_User_Library.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/day_7/.idea/misc.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/day_7/.idea/modules.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/day_7/.idea/other.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/day_7/.idea/vcs.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/day_7/.idea/workspace.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/day_7/hero_rpg.py" afterPath="" />
       <change beforePath="$PROJECT_DIR$/day_7/oop_exercises.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/day_7/rpg-main.py" afterPath="" />
       <change beforePath="$PROJECT_DIR$/day_7/test_rpg.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/day_7/venv1/pythonw/bin/activate" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/day_7/venv1/pythonw/bin/activate.csh" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/day_7/venv1/pythonw/bin/activate.fish" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/day_7/venv1/pythonw/bin/activate_this.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/day_7/venv1/pythonw/bin/easy_install" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/day_7/venv1/pythonw/bin/easy_install-3.6" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/day_7/venv1/pythonw/bin/f2py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/day_7/venv1/pythonw/bin/pip" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/day_7/venv1/pythonw/bin/pip3" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/day_7/venv1/pythonw/bin/pip3.6" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/day_7/venv1/pythonw/bin/python" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/day_7/venv1/pythonw/bin/python-config" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/day_7/venv1/pythonw/bin/python3" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/day_7/venv1/pythonw/bin/python3.6" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/day_7/venv1/pythonw/bin/wheel" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/day_7/venv1/pythonw/include/python3.6m" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/day_7/venv1/pythonw/pip-selfcheck.json" afterPath="" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -26,38 +54,30 @@
     <SUITE FILE_PATH="coverage/rpg_game$hero_rpg.coverage" NAME="hero_rpg Coverage Results" MODIFIED="1519178483180" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../day_7" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="hero_rpg.py" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/day_7/hero_rpg.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="541">
-                  <caret line="131" column="23" lean-forward="true" selection-start-line="131" selection-start-column="23" selection-end-line="131" selection-end-column="23" />
-                  <folding>
-                    <element signature="e#111#124#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="rpg-main.py" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/day_7/rpg-main.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="512">
-                  <caret line="47" column="19" lean-forward="false" selection-start-line="47" selection-start-column="19" selection-end-line="47" selection-end-column="19" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="rpg-main.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/rpg-main.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="rpg_game.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/rpg_game.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="77">
+              <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+              <folding>
+                <element signature="e#111#124#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -67,6 +87,7 @@
       <list>
         <option value="$PROJECT_DIR$/../day_7/hero_rpg.py" />
         <option value="$PROJECT_DIR$/day_7/hero_rpg.py" />
+        <option value="$PROJECT_DIR$/day_7/rpg-main.py" />
       </list>
     </option>
   </component>
@@ -110,7 +131,7 @@
             <path>
               <item name="rpg_game" type="b2602c69:ProjectViewProjectNode" />
               <item name="rpg_game" type="462c0819:PsiDirectoryNode" />
-              <item name="day_7" type="462c0819:PsiDirectoryNode" />
+              <item name="venv1" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -122,7 +143,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="WebServerToolWindowFactoryState" value="false" />
   </component>
   <component name="PyConsoleOptionsProvider">
@@ -212,15 +233,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="70" y="23" width="1680" height="954" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3701979" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32945284" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29990068" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36321303" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2891374" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2887668" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="R Packages" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="R Graphics" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -258,9 +278,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#111#124#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -268,9 +286,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2805">
           <caret line="189" column="7" lean-forward="true" selection-start-line="189" selection-start-column="7" selection-end-line="189" selection-end-column="7" />
-          <folding>
-            <element signature="e#111#124#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -286,9 +302,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#111#124#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -297,17 +311,41 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="541">
           <caret line="131" column="23" lean-forward="true" selection-start-line="131" selection-start-column="23" selection-end-line="131" selection-end-column="23" />
-          <folding>
-            <element signature="e#111#124#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/day_7/rpg-main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="512">
+        <state relative-caret-position="705">
           <caret line="47" column="19" lean-forward="false" selection-start-line="47" selection-start-column="19" selection-end-line="47" selection-end-column="19" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day_7/rpg_game.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rpg-main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rpg_game.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="77">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding>
+            <element signature="e#111#124#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
