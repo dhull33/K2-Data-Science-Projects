@@ -61,10 +61,13 @@ class InputManager(object):
                 else:
                     print("That's not a valid answer, bud.")
             else:
+                if re.match(f"^[1-{str(num_options)}]$", str(ans)):
+                    return ans
                 if ans == extra_option:
                     return ans
                 else:
                     print("That's not a valid answer, bud.")
+
 
 
 
