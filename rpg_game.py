@@ -7,6 +7,67 @@ Created on Tue Feb 13 12:49:12 2018
 """
 import random
 import time
+import re
+
+
+
+class InputManager(object):
+    """Class with methods for sanitizing user input."""
+    def __init__(self):
+        pass
+
+
+    def get_yes_or_no(prompt):
+        """Sanatizes user input for yes or no questions.
+
+        Args:
+            prompt: the question displayed to the user.
+
+        Returns:
+            Bool - True for yes answer, False for No Answer."""
+
+        while True:
+            print(prompt)
+            ans = input("> ")
+            if ans[0].lower() == "y":
+                return True
+            elif ans[0].lower() == "n":
+                return False
+            else:
+                print("That's not a valid answer, bud.")
+
+
+    def get_numerical_input(prompt, num_options, extra_option=None):
+        """Sanatizes user input when chosing between multiple options.
+
+        Args:
+            prompt: the question displayed to the user
+            num_options: the amount of options the user has to chode between.
+            extra_options: optional arguement if there is an extra argument
+            outside of 'num_options'
+
+        Returns:
+            ans: sanitised answer to the prompt."""
+        while True:
+            print(prompt)
+            try:
+                ans = int(input("> "))
+            except ValueError:
+                print("You need to enter a number, fella.")
+                continue
+            if not extra_option:
+                if re.match(f"^[1-{str(num_options)}]$", str(ans)):
+                    return ans
+                else:
+                    print("That's not a valid answer, bud.")
+            else:
+                if re.match(f"^[1-{str(num_options)}]$", str(ans)):
+                    return ans
+                if ans == extra_option:
+                    return ans
+                else:
+                    print("That's not a valid answer, bud.")
+
 
 
 
@@ -17,14 +78,16 @@ class Character(object):
         self.power = 5
         self.coins = 20
         self.armor = 0
-    
+
+
     def alive(self):
         return self.health > 0
-    
-    
+
+
     def print_status(self):
         print('{} has {} health and {} power.'.format(self.name, self.health, self.power))
-    
+
+
     def attack(self, enemy):
         if enemy.evade > 0 and random.random() < 0.05:
             print("You have evaded an attack!")
@@ -45,7 +108,7 @@ class Character(object):
 
 
 
-       
+
 class Hero(Character):
     def __init__(self):
         self.name = 'Hero'
@@ -54,29 +117,30 @@ class Hero(Character):
         self.coins = 10
         self.armor = 0
         self.evade = 0
-    
+
+
     def attack(self, enemy):
         if random.random() <= 0.2:
-            enemy.health -= self.power*2
+            enemy.health -= self.power * 2
         elif self.armor > 0:
             arm_health = self.health + self.armor
             arm_health -= enemy.power
             print('Your armor has protected you!')
         super(Hero, self).attack(enemy)
 
-        
+
     def buy(self, item):
         self.coins -= item.cost
-        item.apply(hero)
-    
+        item.apply(self)
+
     def restore(self):
-        self.health =10
+        self.health = 10
         print("Hero's health is restored to {}!".format(self.health))
         time.sleep(1)
 
 
 
-class Goblin(Character): 
+class Goblin(Character):
     def __init__(self):
         self.name = 'Goblin of Terror'
         self.health = 6
@@ -93,7 +157,8 @@ class Zombie(Character):
         self.bounty = 10
         self.armor = 0
         self.evade = 0
-    
+
+
     def attack(self, enemy):
         self.health += 6
         enemy.health -= self.power
@@ -102,7 +167,6 @@ class Zombie(Character):
 
 
 
-    
 class Medic(Character):
     def __init__(self):
         self.name = 'Medic'
@@ -111,7 +175,7 @@ class Medic(Character):
         self.bounty = 6
         self.armor = 0
         self.evade = 0
-    
+
     def attack(self, enemy):
         if random.randrange(1, 10, 1) <= 2:
             self.health += 2
@@ -121,7 +185,7 @@ class Medic(Character):
             print("The Medic has taken {} health from you.".format(enemy.health))
         super(Medic, self).attack(enemy)
 
-    
+
 
 class Shadow(Character):
     def __init__(self):
@@ -133,7 +197,8 @@ class Shadow(Character):
         self.armor = 0
         self.evade = 0
 
-        
+
+
 class Wizard(Character):
     def __init__(self):
         self.name = 'Evil Wizard'
@@ -161,7 +226,7 @@ class Godzilla(Character):
         self.bounty = 25
         self.armor = 0
         self.evade = 0
-    
+
     def attack(self, enemy):
         eat = random.random() > 0.01
         if eat:
@@ -169,93 +234,209 @@ class Godzilla(Character):
         super(Godzilla, self).attack(enemy)
 
 
-
-
-
 ###################### Battle ###########################
-    
+
 class Thunderdome(object):
+    def __init__(self):
+        pass
+
+
     def pre_bat(self):
+        """Flavor text welcoming the user to the Thunderdome.
+
+        Args:
+            None
+
+        Returns:
+            None"""
+
         print("==============================")
         print("  Welcome to the Thunderdome  ")
         print("==============================")
         print("            Shhh...\n  ",u"\u2620", "Death is Listening",u"\u2620")
-        
+
         time.sleep(1.5)
 
-    def battle(self, hero, enemy):
+
+    def print_pre_battle_prompt(self):
+        """Prints the list of adversaries the user will face when entering the
+        Thunderdome.
+
+        Args:
+            None
+
+        Returns:
+            None"""
+
+        adversaries = ["The Zapping Zombie", "The Gruesome Goblin",
+                       "The Wrecking Wizard", "The Shocking Shadow",
+                       "The Mummified Medic", "Godzilla the GOAT!"]
         print("")
-        print("Your Potential Adversaries: \n   The Zapping Zombie \n   The Gruesome Goblin \n   The Wrecking Wizard \n   The Shocking Shadow \n   The Mummified Medic \n   Godzilla the GOAT!")
+        print("Your Potential Adversaries: ")
+        for adversary in adversaries:
+            print("  {}".format(adversary))
         print("")
-        
+
         time.sleep(1)
+
+
+    def decide_if_battle(self, enemy):
+        """Asks the user if they would like to do battle with the current enemy.
+        Exits the program if the user does not wish to fight.
+
+        Args:
+            enemy: The enemy object the hero is battling against.
+
+        Returns:
+            None"""
 
         print("The {} challenges you!".format(enemy.name))
         print("")
-        print("Shall we fight to the death Hero?(y/n)")
-        yay_nay = input('> ')
-        yaynay = yay_nay.lower()
-        
-        if yaynay == 'y' or yaynay == 'yes':
-            pass
+        yay_nay = InputManager.get_yes_or_no("Shall we fight to the death Hero?(y/n)")
+
+        if yay_nay:
+            return
         else:
             time.sleep(1)
             print("You have brought great shame upon your family...")
             exit(0)
-            
 
-        while hero.alive() and enemy.alive():
-            print("================================")
-            print("Hero faces the {}!".format(enemy.name))
-            print("================================")
-            print('')
-            hero.print_status()
-            enemy.print_status()
-            time.sleep(1)
-            print('')
-            print("-----------------------")
-            print("What should you do?")
-            print("1. Fight your challenger {}?".format(enemy.name))
-            print('2. Do nothing?')
-            print('3. Run away?')
-            keyinput = int(input("> "))
-            
-            if keyinput == 1:
-                hero.attack(enemy)
-                enemy.attack(hero)
 
-            elif keyinput == 2:
-                print("")
-                print("That was dumb...?")
-                print("")
-                enemy.attack(hero)
-            elif keyinput == 3:
-                print("")
-                stow = input("Shall we go to the store then? (y/n")
-                if stow == 'y' or 'yes' or 'Y' or 'Yes':
-                    return True
-                else:
-                    print("")
-                    print("I am ashamed to have called you a hero!")
+    def print_battle_data(self, hero, enemy):
+        """Displays information about the current status of the battle the hero
+        is in.
 
-            else:
-                print("")
-                print("You are not fit to enter the Thunderdome.")
-                exit(0)
+        Args:
+            hero: A hero object controlled by the player.
+            enemy: The enemy object the hero is battling against.
 
-        if hero.alive():
-            hero.coins += enemy.bounty
-            print("You have defeated the {}!".format(enemy.name))
+        Returns:
+            None"""
+
+        print("================================")
+        print("Hero faces the {}!".format(enemy.name))
+        print("================================")
+        print('')
+        hero.print_status()
+        enemy.print_status()
+        time.sleep(1)
+        print('')
+        print("-----------------------")
+
+
+    def decide_hero_action(self, hero, enemy):
+        """Displays player's options in battle on screen and allows user to input
+        their decision.
+
+        Args:
+            hero: A hero object controlled by the player.
+            enemy: The enemy object the hero is battling against.
+
+        Returns:
+            hero_action(int): Interger value corresponding to the choice the
+            the player made during battle."""
+
+        fight_options = [f"1. Fight your challenger, {enemy.name}",
+                         "2. Do nothing?", "3. Run Away"]
+        for option in fight_options:
+            print(option)
+        hero_action = InputManager.get_numerical_input("What should you do?",
+                                                        len(fight_options))
+        return hero_action
+
+
+    def resolve_hero_action(self, hero, enemy, hero_action):
+        """Resolves the decision made by the hero during a turn in battle.
+
+        Args:
+            hero: A hero object controlled by the player.
+            enemy: The enemy object the hero is battling against.
+            hero_action(int): An interger that corresponds to a choice the user
+            made during the current turn in battle.
+
+        Returns:
+            Bool: True if the hero is still in combat. False if the hero has
+            fled from battle."""
+
+        if hero_action == 1:
+            hero.attack(enemy)
+            enemy.attack(hero)
+            return True
+        elif hero_action == 2:
+            print("")
+            print("That was dumb...?")
+            print("")
+            enemy.attack(hero)
             return True
         else:
-            print("You have dishonored your ancestors.")
+            print("Running away... ...")
             return False
- 
 
 
+    def post_battle_text(self, hero, enemy, shop):
+        """Displays post-battle information to the user. Gives the player the
+        option to go to the store if they are still alive.
+
+        Args:
+            hero: A hero object controlled by the player.
+            enemy: The enemy object the hero is battling against.
+            shop: The shop object, called after the battle to allow the hero
+            to shop.
+
+        Returns:
+            Bool: True if the hero is alive. False if the hero has died."""
+
+        print("The battle has ended...")
+
+        if hero.alive() and not enemy.alive():
+            hero.coins += enemy.bounty
+            print("You have defeated the {}!".format(enemy.name))
+        elif hero.alive() and enemy.alive():
+            print("You are safe, for now.")
+        else:
+            print("You have perished.")
+            return False
+
+        go_to_store = InputManager.get_yes_or_no("Shall we go to the store then? (y/n)")
+        if go_to_store:
+            shop.welcome()
+            shop.do_shopping(hero)
+        else:
+            print("")
+            print("Fool! Get Ready to face your next opponenet.")
+
+        return True
+
+
+    def battle(self, hero, enemy, shop):
+        """Main battle loop for the Thunderdome class. Handles battle logic.
+
+        Args:
+            hero: A hero object controlled by the player.
+            enemy: The enemy object the hero is battling against.
+            shop: The shop object, called after the battle to allow the hero
+            to shop.
+
+        Returns:
+            Bool: True is the hero is still alive. False if the hero has died."""
+
+        self.print_pre_battle_prompt()
+        self.decide_if_battle(enemy)
+
+        while hero.alive() and enemy.alive():
+            self.print_battle_data(hero, enemy)
+            hero_action = self.decide_hero_action(hero, enemy)
+            still_in_battle = self.resolve_hero_action(hero, enemy, hero_action)
+            if not still_in_battle:
+                break
+
+        hero_alive = self.post_battle_text(hero, enemy, shop)
+        if hero_alive:
+            return True
+        return False
 
 ################## Store Items ############################
-       
+
 class Tonic(object):
     cost = 5
     name = 'Tonic'
@@ -271,9 +452,8 @@ class SuperTonic(object):
     def apply(self, hero):
         hero.health += 15
         print("Hero's health has increased to {}.".format(hero.health))
-        
- 
-       
+
+
 class Sword(object):
     cost = 10
     name = 'Sword'
@@ -285,14 +465,14 @@ class Armor(object):
     cost = 3
     name = 'Armor'
     def apply(self, hero):
-        hero.armor += 2 
+        hero.armor += 2
         print("Your armor has increased to {}!".format(hero.armor))
 
 class Evade(object):
     cost = 12
     name = 'Evade'
     def apply(self, hero):
-        hero.evade += 2 
+        hero.evade += 2
         print("You're getting pretty good at dodging attacks.\nYou have {} evade points.".format(hero.evade))
 
 
@@ -312,19 +492,18 @@ class Store(object):
         print("=====================")
 
     def do_shopping(self, hero):
+
         while True:
             print("")
             print("You have {} coins.".format(hero.coins))
             print("")
-            print("What do you want to purchase?")
-            for i in range(len(Store.items)):
-                item = Store.items[i]
+            for i, item in enumerate(Store.items):
                 print("{}. buy {} ({})".format(i + 1, item.name, item.cost))
             print("10. leave")
-            inp = int(input("> "))
+            inp = InputManager.get_numerical_input("What do you want to purchase?",
+                                                    len(Store.items), extra_option=10)
             if inp == 10:
                 break
-
             else:
                 ItemToBuy = Store.items[inp - 1]
                 item = ItemToBuy()
@@ -334,64 +513,38 @@ class Store(object):
                     print("Go back to the Thunderdome and fight to earn your keep")
                     print("")
                     break
-
                 else:
                     hero.buy(item)
-        
-        
-      
-
 
 
 ################### Main ##########################
 
-          
-        
-if __name__ == "__main__":
+
+def main():
+
     hero = Hero()
-    
+
     thunderdome = Thunderdome()
-    
+
     enemies = [Goblin(), Wizard(), Shadow(), Godzilla(), Medic(), Zombie()]
-    
+
     shop = Store()
-    
+
     thunderdome.pre_bat()
     for enemy in enemies:
-        hero_won = thunderdome.battle(hero, enemy)
+        hero_won = thunderdome.battle(hero, enemy, shop)
         if not hero_won:
             print("")
             print("What is dead may never die...")
             exit(0)
-        shop.welcome()
-        shop.do_shopping(hero)
-    
+
     print("Congratulations! You have defeated all your enemies!")
     print("")
     print("What are going to do with all your free time?")
     exit(0)
-        
-   
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-     
-        
-        
-        
-        
-        
-        
-        
+if __name__ == "__main__":
+    main()
