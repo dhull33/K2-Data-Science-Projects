@@ -6,7 +6,7 @@
       <excludeFolder url="file://$MODULE_DIR$/venv1/pythonw" />
       <excludeFolder url="file://$MODULE_DIR$/venv1/pythonw1" />
     </content>
-    <orderEntry type="jdk" jdkName="Python 3.6 (rpg_game)" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Python 3.6 (dict_exercises.py)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="R Skeletons" level="application" />
     <orderEntry type="library" name="R User Library" level="project" />

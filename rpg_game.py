@@ -203,7 +203,7 @@ class Wizard(Character):
     def __init__(self):
         self.name = 'Evil Wizard'
         self.health = 15
-        self.power = random.randint(1, 9)
+        self.power = random.randint(3, 9)
         self.bounty = 7
         self.armor = 0
         self.evade = 0
@@ -211,11 +211,9 @@ class Wizard(Character):
     def attack(self, enemy):
         swap_power = random.random() > 0.5
         if swap_power:
-            print("{} swaps power with {} during attack".format(self.name, enemy.name))
-            self.power, enemy.power = enemy.power, self.power
-        else:
-            enemy.health -= self.power
+            print("{} swaps power with {} during attack!".format(self.name, enemy.name))
 
+            self.power, enemy.power = enemy.power, self.power
         super(Wizard, self).attack(enemy)
 
 class Godzilla(Character):
@@ -230,7 +228,7 @@ class Godzilla(Character):
     def attack(self, enemy):
         eat = random.random() > 0.01
         if eat:
-            enemy.health -= (self.power * 3)
+            enemy.health -= (self.power * 1.5)
         super(Godzilla, self).attack(enemy)
 
 
@@ -270,7 +268,7 @@ class Thunderdome(object):
 
         adversaries = ["The Zapping Zombie", "The Gruesome Goblin",
                        "The Wrecking Wizard", "The Shocking Shadow",
-                       "The Mummified Medic", "Godzilla the GOAT!"]
+                       "The Mummified Medic", "Godzilla the Grim!"]
         print("")
         print("Your Potential Adversaries: ")
         for adversary in adversaries:
@@ -340,8 +338,7 @@ class Thunderdome(object):
                          "2. Do nothing?", "3. Run Away"]
         for option in fight_options:
             print(option)
-        hero_action = InputManager.get_numerical_input("What should you do?",
-                                                        len(fight_options))
+        hero_action = InputManager.get_numerical_input("What should you do?",len(fight_options))
         return hero_action
 
 
@@ -351,7 +348,7 @@ class Thunderdome(object):
         Args:
             hero: A hero object controlled by the player.
             enemy: The enemy object the hero is battling against.
-            hero_action(int): An interger that corresponds to a choice the user
+            hero_action(int): An integer that corresponds to a choice the user
             made during the current turn in battle.
 
         Returns:
@@ -391,6 +388,9 @@ class Thunderdome(object):
         if hero.alive() and not enemy.alive():
             hero.coins += enemy.bounty
             print("You have defeated the {}!".format(enemy.name))
+            print("")
+            print("You have {} coins.".format(hero.coins))
+
         elif hero.alive() and enemy.alive():
             print("You are safe, for now.")
         else:
@@ -403,7 +403,7 @@ class Thunderdome(object):
             shop.do_shopping(hero)
         else:
             print("")
-            print("Fool! Get Ready to face your next opponenet.")
+            print("Fool! Get Ready to face your next opponent.")
 
         return True
 
@@ -500,8 +500,7 @@ class Store(object):
             for i, item in enumerate(Store.items):
                 print("{}. buy {} ({})".format(i + 1, item.name, item.cost))
             print("10. leave")
-            inp = InputManager.get_numerical_input("What do you want to purchase?",
-                                                    len(Store.items), extra_option=10)
+            inp = InputManager.get_numerical_input("What do you want to purchase?", len(Store.items), extra_option=10)
             if inp == 10:
                 break
             else:
