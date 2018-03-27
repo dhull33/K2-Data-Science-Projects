@@ -72,7 +72,7 @@ class InputManager(object):
 
 
 class Character(object):
-    def __init__ (self):
+    def __init__(self):
         self.name = '<undefined>'
         self.health = 10
         self.power = 5
@@ -171,7 +171,7 @@ class Medic(Character):
     def __init__(self):
         self.name = 'Medic'
         self.health = 8
-        self.power = random.randint(1,7)
+        self.power = random.randint(1, 7)
         self.bounty = 6
         self.armor = 0
         self.evade = 0
